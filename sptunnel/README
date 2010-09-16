@@ -1,0 +1,27 @@
+		 sptunnel README
+
+The sptunnel program is designed to work as an SSL encryption wrapper
+between remote client and local or remote server.  It can be used to
+add SSL functionality to commonly daemons like POP2, POP3, IMAP and HTTP
+servers without any changes in the programs' code.
+
+bash-2.05a$ ./sptunnel -v
+Usage: ./sptunnel [-p <port>] [-t <threads>] [-r <backend>]
+
+bash-2.05a$ ./sptunnel 
+sptunnel[27626]: Backend server - 66.249.89.99:80 ;; default is google.com
+sptunnel[27626]: Listen on port [8080]
+
+You can use the browser ( IE, Firefox, etc. ) to visit:
+
+	https://<the.ip.of.sptunnel>:8008/
+
+Or, use curl
+
+	curl https://<the.ip.of.sptunnel>:8080/
+
+
+Enjoy!
+
+				-- stephen liu <stephen.nil@gmail.com>
+

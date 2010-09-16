@@ -1,0 +1,25 @@
+			 spserver/win32 README
+
+spserver/win32 is a TCP server framework library written in C++ based on IOCP.
+
+SP_IocpServer implements the Half-Sync/Half-Async pattern. It uses a single
+thread to process IO (the async layer), and a thread pool to process the service
+logic (the sync layer, the long time duration work can be done here).
+
+SP_IocpLFServer implements the Leader/Follower pattern.
+
+SP_IocpDispatcher designs to apply a half-async/half-sync thread pool for both
+server and client sockets.
+
+
+
+You can get the code from the spserver home page:
+
+	http://code.google.com/p/spserver/
+
+Any and all comments are appreciated.
+
+Enjoy!
+
+				-- stephen liu <stephen.nil@gmail.com>
+

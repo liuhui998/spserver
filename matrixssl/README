@@ -1,0 +1,39 @@
+		 spserver/matrixssl README
+
+1.Introduction
+
+spserver/matrixssl is a plugin for spserver, it enables spserver to support ssl.
+
+2.Building
+
+Before building spserver/matrixssl, MatrixSSL must been installed.
+
+You can donwload MatrixSSL from its home page:
+
+	http://www.matrixssl.org/
+
+Edit spserver/matrixssl/Makefile to specify the path of MatrixSSL:
+
+	MASSL_INCL = -I<path_to_matrixssl_include>
+	MASSL_LIB  = -L<path_to_matrixssl_library> -lmatrixssl
+
+To build libspmatrixssl.so, type
+
+$ cd spserver/matrixssl
+$ make
+
+This will build all the targets include examples. You can run the
+example programs:
+
+bash-2.05a$ ./testechos 
+testechos[28745]: Listen on port [1995]
+
+You can use the stelnet to visit:
+
+	./stelnet 127.0.0.1 1995
+
+
+Enjoy!
+
+				-- stephen liu <stephen.nil@gmail.com>
+

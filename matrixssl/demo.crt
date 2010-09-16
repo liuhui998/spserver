@@ -1,0 +1,61 @@
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number: 2 (0x2)
+        Signature Algorithm: md5WithRSAEncryption
+        Issuer: C=NO, ST=TEST, L=TEST, O=TEST, OU=TEST, CN=TEST/Email=TEST@TEST.COM
+        Validity
+            Not Before: Dec 18 02:06:26 2000 GMT
+            Not After : Dec 18 02:06:26 2001 GMT
+        Subject: C=NO, ST=TEST, L=TEST, O=TEST, OU=DEMO, CN=DEMO/Email=TEST@TEST.COM
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+            RSA Public Key: (512 bit)
+                Modulus (512 bit):
+                    00:c8:46:d3:a7:b5:da:58:b1:5a:08:6b:28:a8:7b:
+                    a5:9b:4a:83:1e:58:4f:0b:18:9e:aa:83:11:27:97:
+                    24:92:70:0b:47:f4:c8:74:a1:58:92:19:35:88:b3:
+                    8a:b4:ae:ee:e2:98:5d:bf:d4:53:b8:c6:0c:a1:da:
+                    be:b6:b2:18:f9
+                Exponent: 65537 (0x10001)
+        X509v3 extensions:
+            X509v3 Basic Constraints: 
+                CA:FALSE
+            Netscape Comment: 
+                OpenSSL Generated Certificate
+            X509v3 Subject Key Identifier: 
+                64:2B:31:23:69:F6:49:10:96:EB:BB:5E:91:F2:12:54:37:E6:B3:6B
+            X509v3 Authority Key Identifier: 
+                keyid:BA:E8:35:48:75:8B:37:A9:77:48:D5:7A:B3:AB:34:C2:41:7C:FF:0E
+                DirName:/C=NO/ST=TEST/L=TEST/O=TEST/OU=TEST/CN=TEST/Email=TEST@TEST.COM
+                serial:00
+
+    Signature Algorithm: md5WithRSAEncryption
+        c0:36:98:cd:32:2d:65:59:60:a9:c9:ca:fa:ba:d8:d6:b1:89:
+        16:8b:ae:a5:6f:ea:c3:a0:b1:55:27:0b:04:42:a2:2f:33:39:
+        fc:46:79:5d:63:33:bf:a7:b2:32:01:a7:17:13:6b:c6:67:2b:
+        ee:ee:37:3e:64:e4:bb:5d:e9:28:5b:1b:46:33:3d:c1:27:fb:
+        8c:ff:ef:e5:49:22:18:e7:6a:03:4c:80:67:45:41:7c:48:e2:
+        a8:a4:d4:7e:18:09:1d:2d:ab:bd:f0:97:ac:ba:5a:28:46:51:
+        a0:d3:80:b2:83:70:d4:9a:a6:d0:5f:46:77:43:0e:aa:25:d3:
+        19:3c
+test haha
+-----BEGIN CERTIFICATE-----
+MIIDHTCCAoagAwIBAgIBAjANBgkqhkiG9w0BAQQFADB2MQswCQYDVQQGEwJOTzEN
+MAsGA1UECBMEVEVTVDENMAsGA1UEBxMEVEVTVDENMAsGA1UEChMEVEVTVDENMAsG
+A1UECxMEVEVTVDENMAsGA1UEAxMEVEVTVDEcMBoGCSqGSIb3DQEJARYNVEVTVEBU
+RVNULkNPTTAeFw0wMDEyMTgwMjA2MjZaFw0wMTEyMTgwMjA2MjZaMHYxCzAJBgNV
+BAYTAk5PMQ0wCwYDVQQIEwRURVNUMQ0wCwYDVQQHEwRURVNUMQ0wCwYDVQQKEwRU
+RVNUMQ0wCwYDVQQLEwRERU1PMQ0wCwYDVQQDEwRERU1PMRwwGgYJKoZIhvcNAQkB
+Fg1URVNUQFRFU1QuQ09NMFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAMhG06e12lix
+WghrKKh7pZtKgx5YTwsYnqqDESeXJJJwC0f0yHShWJIZNYizirSu7uKYXb/UU7jG
+DKHavrayGPkCAwEAAaOB/jCB+zAJBgNVHRMEAjAAMCwGCWCGSAGG+EIBDQQfFh1P
+cGVuU1NMIEdlbmVyYXRlZCBDZXJ0aWZpY2F0ZTAdBgNVHQ4EFgQUZCsxI2n2SRCW
+67tekfISVDfms2swgaAGA1UdIwSBmDCBlYAUuug1SHWLN6l3SNV6s6s0wkF8/w6h
+eqR4MHYxCzAJBgNVBAYTAk5PMQ0wCwYDVQQIEwRURVNUMQ0wCwYDVQQHEwRURVNU
+MQ0wCwYDVQQKEwRURVNUMQ0wCwYDVQQLEwRURVNUMQ0wCwYDVQQDEwRURVNUMRww
+GgYJKoZIhvcNAQkBFg1URVNUQFRFU1QuQ09NggEAMA0GCSqGSIb3DQEBBAUAA4GB
+AMA2mM0yLWVZYKnJyvq62NaxiRaLrqVv6sOgsVUnCwRCoi8zOfxGeV1jM7+nsjIB
+pxcTa8ZnK+7uNz5k5Ltd6ShbG0YzPcEn+4z/7+VJIhjnagNMgGdFQXxI4qik1H4Y
+CR0tq73wl6y6WihGUaDTgLKDcNSaptBfRndDDqol0xk8
+-----END CERTIFICATE-----

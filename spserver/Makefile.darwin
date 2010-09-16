@@ -1,0 +1,63 @@
+
+#--------------------------------------------------------------------
+
+CC = gcc
+AR = ar cru
+CFLAGS = -Wall -D_REENTRANT -D_GNU_SOURCE -g -fPIC -fexceptions
+SOFLAGS = -dynamiclib -flat_namespace -undefined suppress 
+LDFLAGS = -lstdc++
+
+LINKER = g++
+LINT = lint -c
+RM = /bin/rm -f
+
+
+LIBEVENT_INCL = -I$(HOME)/libevent/
+LIBEVENT_LIB  = -L$(HOME)/libevent -levent
+
+CFLAGS  += $(LIBEVENT_INCL)
+LDFLAGS += $(LIBEVENT_LIB) -lpthread -lresolv
+
+#--------------------------------------------------------------------
+
+LIBOBJS = sputils.o spioutils.o spiochannel.o \
+	spthreadpool.o event_msgqueue.o spbuffer.o sphandler.o \
+	spmsgblock.o spmsgdecoder.o spresponse.o sprequest.o \
+	spexecutor.o spsession.o speventcb.o spserver.o \
+	spdispatcher.o splfserver.o \
+	sphttpmsg.o sphttp.o spsmtp.o
+
+TARGET =  libspserver.dylib \
+		testecho testchat teststress testhttp
+
+#--------------------------------------------------------------------
+
+all: $(TARGET)
+
+libspserver.dylib: $(LIBOBJS)
+	$(LINKER) $(SOFLAGS) $^ -o $@
+
+teststress: teststress.o
+	$(LINKER) $(LDFLAGS) $^ -L. -levent -o $@
+
+testecho: testecho.o
+	$(LINKER) $(LDFLAGS) $^ -L. libspserver.dylib -o $@
+
+testchat: testchat.o
+	$(LINKER) $(LDFLAGS) $^ -L. libspserver.dylib -o $@
+
+testhttp: testhttp.o
+	$(LINKER) $(LDFLAGS) $^ -L. libspserver.dylib -o $@
+
+clean:
+	@( $(RM) *.o vgcore.* core core.* $(TARGET) )
+
+#--------------------------------------------------------------------
+
+# make rule
+%.o : %.c
+	$(CC) $(CFLAGS) -c $^ -o $@	
+
+%.o : %.cpp
+	$(CC) $(CFLAGS) -c $^ -o $@	
+

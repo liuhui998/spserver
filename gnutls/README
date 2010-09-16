@@ -1,0 +1,40 @@
+		 spserver/gnutls README
+
+1.Introduction
+
+spserver/gnutls is a plugin for spserver, it enables spserver to support gnutls.
+
+2.Building
+
+Before building spserver/gnutls, GNUTLS must been installed.
+
+You can donwload GNUTLS from its home page:
+
+	ftp://ftp.gnupg.org/gcrypt/
+
+Edit spserver/gnutls/Makefile to specify the path of GNUTLS:
+
+	GNUTLS_INCL = -I<path_to_gnutls_include>
+	GNUTLS_LIB  = -L<path_to_gnutls_library> -lgcrypt -lgpg-error \
+		-lgnutls -lgnutls-extra -lstdc++
+
+To build libspgnutls.so, type
+
+$ cd spserver/gnutls
+$ make
+
+This will build all the targets include examples. You can run the
+example programs:
+
+bash-2.05a$ ./testechos 
+testechos[28745]: Listen on port [1995]
+
+You can use the stelnet to visit:
+
+	gnutls-cli -p 1995 127.0.0.1
+
+
+Enjoy!
+
+				-- stephen liu <stephen.nil@gmail.com>
+

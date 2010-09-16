@@ -1,0 +1,97 @@
+			 spserver README
+
+1.Introduction
+
+spserver is a TCP server framework library written in C++ based on libevent.
+
+spserver implements the Half-Sync/Half-Async and the Leader/Follower patterns.
+
+More detail about the Half-Sync/Half-Async and Leader/Follower patterns:
+
+	http://www.cs.wustl.edu/~schmidt/PDF/HS-HA.pdf
+	http://www.cs.wustl.edu/~schmidt/PDF/lf.pdf
+
+Code description:
+
+  SP_Server class implements the Half-Sync/Half-Async pattern.
+
+    SP_Server, SP_EventCallback, SP_Session, SP_Request(SP_MsgDecoder), SP_Response(SP_Message)
+      The asynchronous layer, which receives the asynchronous requests
+
+    SP_EventArg::mInputResultQueue, SP_EventArg::mOutputResultQueue
+      The queueing layer, which buffers the requests
+
+    SP_Executor, SP_ThreadPool, SP_Handler
+      The synchronous layer, which contains several threads of control blocked
+      on the queueing layer
+
+  SP_LFServer class implements the Leader/Follower pattern.
+
+The spserver code was developed under Linux, but has also been tested under Solaris.
+
+You can get the code from the spserver home page:
+
+	http://code.google.com/p/spserver/
+
+2.Building
+
+Before building spserver, libevent must been installed. Test with libevent 1.1 and 1.2.
+
+You can donwload libevent from its home page:
+
+	http://www.monkey.org/~provos/libevent/
+
+Edit spserver/Makefile to specify the path of libevent:
+
+	LIBEVENT_INCL = -I<path_to_libevent_include>
+	LIBEVENT_LIB  = -L<path_to_libevent_library> -levent
+
+To build libspserver.so, type
+
+$ cd spserver
+$ make
+
+This will build all the targets include examples. You can run the
+example programs:
+
+$ ./testsmtp
+[msg] This server is listening on port [1025].
+
+Open another console, use telnet to test:
+
+$ telnet 127.0.0.1 1025
+	Trying 127.0.0.1...
+	Connected to 127.0.0.1.
+	Escape character is '^]'.
+
+	220 SMTP Server Ready
+	helo abc
+	250 ok.
+	mail from:<abc@abc.com>
+	250 sender ok.
+	rcpt to:<foo@bar.com>
+	250 recipient ok.
+	data
+	354 Start mail input; end with <CRLF>.<CRLF>
+	From: abc@abc.com
+	To: foo@bar.com 
+	Subject: test
+	
+	test
+	.
+	250 Requested mail action okay, completed.
+	quit
+	221 Closing connection. Good bye.
+	Connection closed by foreign host.
+
+3.Credits
+
+Special thanks go to Andrew Danforth, who provides a good solution to
+use libevent in multithreaded environment.
+
+Any and all comments are appreciated.
+
+Enjoy!
+
+				-- stephen liu <stephen.nil@gmail.com>
+
