@@ -2,3 +2,15 @@
 .svn/*.*
 *.so
 *.o
+spserver/libspserver.a
+spserver/testchat
+spserver/testchat_d
+spserver/testdispatcher
+spserver/testecho
+spserver/testhttp
+spserver/testhttp_d
+spserver/testhttpmsg
+spserver/testsmtp
+spserver/teststress
+spserver/testthreadpool
+spserver/testunp
