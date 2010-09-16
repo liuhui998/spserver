@@ -12,7 +12,7 @@ LINT = lint -c
 RM = /bin/rm -f
 
 LIBEVENT_INCL = -I$(HOME)/libevent/
-LIBEVENT_LIB  = -L$(HOME)/libevent -levent -lrt
+LIBEVENT_LIB  = -L$(HOME)/libevent/.libs -levent -lrt
 
 CFLAGS  += $(LIBEVENT_INCL)
 LDFLAGS += $(LIBEVENT_LIB)
