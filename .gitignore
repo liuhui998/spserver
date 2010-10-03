@@ -2,6 +2,8 @@
 .svn/*.*
 *.so
 *.o
+cscope.files
+cscope.out
 spserver/libspserver.a
 spserver/testchat
 spserver/testchat_d
