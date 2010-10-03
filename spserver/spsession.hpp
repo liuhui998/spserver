@@ -100,9 +100,9 @@ public:
 	~SP_SessionManager();
 
 	int getCount();
-	void put( uint16_t key, uint16_t seq, SP_Session * session );
-	SP_Session * get( uint16_t key, uint16_t * seq );
-	SP_Session * remove( uint16_t key, uint16_t seq );
+	void put( uint32_t key, uint16_t seq, SP_Session * session );
+	SP_Session * get( uint32_t key, uint16_t * seq );
+	SP_Session * remove( uint32_t key, uint16_t seq );
 
 	int getFreeCount();
 	// > 0 : OK, 0 : out of memory
@@ -110,9 +110,10 @@ public:
 
 private:
 	enum { eColPerRow = 1024 };
-
+  enum { eRowNum = 64};
+  
 	int mCount;
-	SP_SessionEntry_t * mArray[ 64 ];
+	SP_SessionEntry_t * mArray[ eRowNum ];
 
 	int mFreeCount;
 	uint16_t mFreeList;

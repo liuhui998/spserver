@@ -105,7 +105,7 @@ int SP_SessionManager :: getFreeCount()
 	return mFreeCount;
 }
 
-void SP_SessionManager :: put( uint16_t key, uint16_t seq, SP_Session * session )
+void SP_SessionManager :: put( uint32_t key, uint16_t seq, SP_Session * session )
 {
 	int row = key / eColPerRow, col = key % eColPerRow;
 
@@ -121,7 +121,7 @@ void SP_SessionManager :: put( uint16_t key, uint16_t seq, SP_Session * session 
 	mCount++;
 }
 
-SP_Session * SP_SessionManager :: get( uint16_t key, uint16_t * seq )
+SP_Session * SP_SessionManager :: get( uint32_t key, uint16_t * seq )
 {
 	int row = key / eColPerRow, col = key % eColPerRow;
 
@@ -138,7 +138,7 @@ SP_Session * SP_SessionManager :: get( uint16_t key, uint16_t * seq )
 	return ret;
 }
 
-SP_Session * SP_SessionManager :: remove( uint16_t key, uint16_t seq )
+SP_Session * SP_SessionManager :: remove( uint32_t key, uint16_t seq )
 {
 	int row = key / eColPerRow, col = key % eColPerRow;
 

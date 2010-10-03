@@ -16,7 +16,7 @@ class SP_ArrayList;
 class SP_MsgBlockList;
 
 typedef struct tagSP_Sid {
-	uint16_t mKey;
+	uint32_t mKey;
 	uint16_t mSeq;
 
 	enum {
