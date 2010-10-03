@@ -85,7 +85,7 @@ int main( int argc, char * argv[] )
 	assert( 0 == sp_initsock() );
 
 	SP_Server server( "", port, new SP_EchoHandlerFactory() );
-	server.setMaxConnections( 10000 );
+	server.setMaxConnections( 100000 );
 	server.setReqQueueSize( 10000, "Server busy!" );
 	server.runForever();
 

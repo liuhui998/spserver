@@ -58,7 +58,7 @@ SP_SessionManager :: ~SP_SessionManager()
 	memset( mArray, 0, sizeof( mArray ) );
 }
 
-uint16_t SP_SessionManager :: allocKey( uint16_t * seq )
+uint32_t SP_SessionManager :: allocKey( uint16_t * seq )
 {
 	uint16_t key = 0;
 
@@ -71,7 +71,7 @@ uint16_t SP_SessionManager :: allocKey( uint16_t * seq )
 			}
 		}
 
-		if( avail > 0 ) {
+		if( avail > 0  ) {
 			mFreeCount += eColPerRow;
 			mArray[ avail ] = ( SP_SessionEntry_t * )calloc(
 					eColPerRow, sizeof( SP_SessionEntry_t ) );
@@ -79,7 +79,12 @@ uint16_t SP_SessionManager :: allocKey( uint16_t * seq )
 				mArray[ avail ] [ i ].mNext = mFreeList;
 				mFreeList = eColPerRow * avail + i;
 			}
+		} else {
+		  // add code to deal with no avail .
+		  
 		}
+
+		
 	}
 
 	if( mFreeList > 0 ) {

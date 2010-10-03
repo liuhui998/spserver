@@ -106,11 +106,11 @@ public:
 
 	int getFreeCount();
 	// > 0 : OK, 0 : out of memory
-	uint16_t allocKey( uint16_t * seq );
+	uint32_t allocKey( uint16_t * seq );
 
 private:
 	enum { eColPerRow = 1024 };
-  enum { eRowNum = 64};
+  enum { eRowNum = 64*16};
   
 	int mCount;
 	SP_SessionEntry_t * mArray[ eRowNum ];
